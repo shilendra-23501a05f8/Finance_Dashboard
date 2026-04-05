@@ -1,6 +1,15 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://finance-dashboard-f757g9plb-shilendras-projects.vercel.app"
+    ],
+    credentials: true
+}));
 
 app.use(express.json());
 
