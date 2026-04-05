@@ -5,12 +5,12 @@ import BASE_URL from '../api';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [token, setToken] = useState(localStorage.getItem('token') || null);
+    const [token, setToken] = useState(sessionStorage.getItem('token') || null);
     const [user, setUser] = useState(null);
 
     useEffect(() => {
         if (token) {
-            localStorage.setItem('token', token);
+            sessionStorage.setItem('token', token);
             try {
                 // simple JWT decoding
                 const payload = JSON.parse(atob(token.split('.')[1]));
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
                 logout();
             }
         } else {
-            localStorage.removeItem('token');
+            sessionStorage.removeItem('token');
             setUser(null);
             delete axios.defaults.headers.common['Authorization'];
         }
