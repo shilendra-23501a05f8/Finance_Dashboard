@@ -83,7 +83,7 @@ finance-dashboard-system/
     │   ├── pages/
     │   ├── App.jsx
     │   └── main.jsx
-
+```
 ## 🔐 Role Permissions
 
 | Role     | Access Level | Capabilities |
@@ -104,6 +104,7 @@ finance-dashboard-system/
   "password": "hashed",
   "role": "Admin | Analyst | Viewer"
 }
+```
 ### Records
 ```json
 {
@@ -112,7 +113,7 @@ finance-dashboard-system/
   "category": "string",
   "date": "date"
 }
-
+```
 ## 🔗 API Endpoints
 ### Authentication (`/api/users`)
 ```http
@@ -127,7 +128,7 @@ GET    /api/records      (All roles)
 POST   /api/records      (Admin only)
 PUT    /api/records/:id  (Admin only)
 DELETE /api/records/:id  (Admin only)
-
+```
 ## ⚙️ Local Setup
 
 Follow these steps to run the project locally on your system.
@@ -139,12 +140,12 @@ Follow these steps to run the project locally on your system.
 ```bash
 git clone https://github.com/shilendra-23501a05f8/Finance_Dashboard.git
 cd Finance_Dashboard
-
+```
 ### 2) Backend Setup
 ```bash
 cd backend
 npm install
-
+```
 Create a .env file inside the backend folder and add:
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
@@ -157,3 +158,6 @@ npm run start
 cd frontend
 npm install
 npm run dev
+```
+### Author
+Shilendra Narra
