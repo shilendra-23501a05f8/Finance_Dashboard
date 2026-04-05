@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import axios from 'axios';
+import BASE_URL from '../api';
 import { Wallet, TrendingUp, TrendingDown, LogOut, Plus, Trash2, Edit, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,10 +24,10 @@ export default function Dashboard() {
 
     const fetchDashboard = async () => {
         try {
-           const requests = [axios.get('/api/records')];
+           const requests = [axios.get(`${BASE_URL}/api/records`)];
            
            if (user && (user.role === 'admin' || user.role === 'analyst')) {
-               requests.push(axios.get('/api/dashboard/summary'));
+               requests.push(axios.get(`${BASE_URL}/api/dashboard/summary`));
            }
            
            const results = await Promise.all(requests);
@@ -53,7 +54,7 @@ export default function Dashboard() {
 
     const deleteRecord = async (id) => {
         if (!confirm("Are you sure?")) return;
-        await axios.delete(`/api/records/${id}`);
+        await axios.delete(`${BASE_URL}/api/records/${id}`);
         fetchDashboard();
     };
 
@@ -95,9 +96,9 @@ export default function Dashboard() {
         e.preventDefault();
         try {
             if (currentRecord) {
-                await axios.put(`/api/records/${currentRecord._id}`, formData);
+                await axios.put(`${BASE_URL}/api/records/${currentRecord._id}`, formData);
             } else {
-                await axios.post('/api/records', formData);
+                await axios.post(`${BASE_URL}/api/records`, formData);
             }
             closeModal();
             fetchDashboard();
