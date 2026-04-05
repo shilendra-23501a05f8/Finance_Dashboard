@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import BASE_URL from '../api';
 
 export const AuthContext = createContext();
 
@@ -27,12 +28,12 @@ export const AuthProvider = ({ children }) => {
     }, [token]);
 
     const login = async (email, password) => {
-        const res = await axios.post('/api/users/login', { email, password });
+        const res = await axios.post(`${BASE_URL}/api/users/login`, { email, password });
         setToken(res.data.token);
     };
 
     const register = async (name, email, password, role) => {
-        const res = await axios.post('/api/users/register', { name, email, password, role });
+        const res = await axios.post(`${BASE_URL}/api/users/register`, { name, email, password, role });
         return res.data;
     };
 
