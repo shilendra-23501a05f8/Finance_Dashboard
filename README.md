@@ -5,8 +5,8 @@ A full-stack **MERN (MongoDB, Express, React, Node.js)** web application for tra
 ---
 ## 🚀 Live Demo
   
-- Frontend:   
-- Backend API: 
+- Frontend: https://finance-dashboard-gold-nu-97.vercel.app/login
+- Backend API: https://finance-dashboard-1-1g4s.onrender.com/api
 
 ---
 
@@ -119,9 +119,11 @@ finance-dashboard-system/
 ```http
 POST /api/users/register
 POST /api/users/login
+```
 ### Dashboard
 ```http
 GET /api/dashboard/summary   (Admin, Analyst only)
+```
 ### Records
 ```http
 GET    /api/records      (All roles)
@@ -129,6 +131,16 @@ POST   /api/records      (Admin only)
 PUT    /api/records/:id  (Admin only)
 DELETE /api/records/:id  (Admin only)
 ```
+## 🔑 Demo Credentials
+
+You can use the following demo accounts:
+
+- Admin → admin@test.com  
+- Analyst → analyst@test.com  
+- Viewer → view@test.com  
+
+Password for all: `123456`
+
 ## ⚙️ Local Setup
 
 Follow these steps to run the project locally on your system.
@@ -159,5 +171,17 @@ cd frontend
 npm install
 npm run dev
 ```
+### 📸 Screenshots
+Register:-
+<img width="2879" height="1418" alt="image" src="https://github.com/user-attachments/assets/724d6e13-8ac7-40e1-9553-c796aff06a5b" />
+Login:-
+<img width="2877" height="1497" alt="image" src="https://github.com/user-attachments/assets/2d270fbf-0c7d-407f-a5f1-5844b28a405a" />
+Admin:-
+<img width="2879" height="1508" alt="image" src="https://github.com/user-attachments/assets/38c061c1-993c-438c-ae00-227a5f65d769" />
+Analyst:-
+<img width="2879" height="1488" alt="image" src="https://github.com/user-attachments/assets/57ed4d6b-6577-4ab4-85e2-ea778b56f1af" />
+Viewer:-
+<img width="2877" height="1458" alt="image" src="https://github.com/user-attachments/assets/c8c47a78-f3c0-4d72-b11a-ee2d22c2c693" />
+
 ### Author
 Shilendra Narra
